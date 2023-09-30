@@ -13,6 +13,7 @@ public class UserEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+	private String userId;
 	private String name;
 	private String roles;
 	private Long regId;
@@ -20,6 +21,14 @@ public class UserEntity {
 
 	public Long getRegId() {
 		return regId;
+	}
+
+	public String getUserId() {
+		return userId;
+	}
+
+	public void setUserId(String userId) {
+		this.userId = userId;
 	}
 
 	public void setRegId(Long regId) {

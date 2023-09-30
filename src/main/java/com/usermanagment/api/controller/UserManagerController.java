@@ -37,12 +37,14 @@ public class UserManagerController {
 	}
 
 	@PostMapping("/addUser")
-	public String login(@RequestParam String name, @RequestParam String roles, @RequestParam String location,
+	public String login(@RequestParam String name, @RequestParam String roles,
+			@RequestParam String location, @RequestParam String userId,
 			HttpSession session, Model model) {
 		UserEntity entity = new UserEntity();
 		entity.setLocation(location);
 		entity.setName(name);
 		entity.setRoles(roles);
+		entity.setUserId(userId);
 		String username = (String) session.getAttribute("username");
 		Long user = (Long) session.getAttribute("userId");
 		entity.setRegId(Long.valueOf(user));
